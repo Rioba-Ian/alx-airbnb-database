@@ -5,7 +5,8 @@
 
 SELECT b.id, b.start_date, b.end_date, u.name, u.email
 FROM bookings b
-INNER JOIN users u ON b.user_id = u.id;
+INNER JOIN users u ON b.user_id = u.id
+ORDER BY b.start_date DESC;
 
 -- ================
 -- 2. LEFT JOIN: Properties and their reviews
@@ -13,8 +14,8 @@ INNER JOIN users u ON b.user_id = u.id;
 
 SELECT p.id, p.name, p.description, r.rating, r.comment
 FROM properties p
-LEFT JOIN reviews r ON p.id = r.property_id;
-
+LEFT JOIN reviews r ON p.id = r.property_id
+ORDER BY r.rating DESC;
 
 -- ================
 -- 3. FULL OUTER JOIN: All users and all bookings
